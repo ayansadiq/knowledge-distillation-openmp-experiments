@@ -63,3 +63,40 @@ used to fine-tune a smaller code-generation model.
 Based on the official PyTorch Knowledge Distillation Tutorial:
 
 https://docs.pytorch.org/tutorials/beginner/knowledge_distillation_tutorial.html
+
+## OpenMP Baseline Experiment
+
+A C++ numerical-integration program was used to test the compilation,
+correctness, and benchmarking stages of the proposed OpenMP code-generation
+pipeline.
+
+The program calculates pi using:
+
+1. A sequential C++ loop
+2. An OpenMP parallel loop with a reduction
+
+### Results
+
+| Configuration | Sequential Time | OpenMP Time | Speedup | Correctness |
+|---|---:|---:|---:|---|
+| 2 OpenMP threads | 0.936 s | 0.923 s | 1.014x | Passed |
+| 4 OpenMP threads | 0.960 s | 0.941 s | 1.020x | Passed |
+
+The limited speedup likely reflects the restricted CPU resources available in
+Google Colab. The parallel version produced the same result as the sequential
+reference within floating-point tolerance.
+
+### Research Connection
+
+This experiment represents a small version of the proposed evaluation pipeline:
+
+1. Begin with sequential C++ code.
+2. Produce an OpenMP-parallel candidate.
+3. Compile the candidate.
+4. Verify its output against the sequential reference.
+5. Benchmark its runtime.
+6. Retain correct and useful examples as potential training data.
+
+The OpenMP experiment is separate from the PyTorch knowledge-distillation
+baseline. A future stage would use verified sequential/OpenMP code pairs to
+fine-tune and evaluate a smaller code-generation model.
