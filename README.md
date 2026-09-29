@@ -48,6 +48,12 @@ Temperature controls how soft the teacher and student distributions are.
 After reproducing the baseline, the temperature is changed to observe
 how the softness of the teacher's output affects student performance.
 
+## Current Extension: PyTorch → JAX Code Translation
+
+A new sequence-to-sequence KD prototype now lives in [`torch-jax-translation/`](./torch-jax-translation). It extends the classification baseline to text generation, aligns corresponding JAXBench PyTorch/JAX files, and includes a teacher/student distillation training harness plus generated-code diagnostics.
+
+The first concrete translation case is `10p_Sparse_MoE` from the JAXBench PyTorch translation and JAX reference repositories.
+
 ## Connection to OpenMP Code Generation
 
 This image-classification experiment serves as a small, understandable
