@@ -1,7 +1,6 @@
 # PyTorch Knowledge Distillation Baseline
 
-This repository reproduces a knowledge-distillation experiment using
-PyTorch and the CIFAR-10 image-classification dataset.
+Knowledge distillation experiments for efficient code generation, including text-to-text KD, PyTorch→JAX translation, and OpenMP parallelization.
 
 ## Purpose
 
