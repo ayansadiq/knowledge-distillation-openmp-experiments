@@ -42,10 +42,10 @@ The previous baseline predicts classes. Code translation requires generating an 
 
 - [x] define sequence-to-sequence KD objective
 - [x] identify corresponding Sparse MoE PyTorch/JAX pair
-- [ ] text-to-text KD proof
-- [ ] automatic paired benchmark builder
-- [ ] PyTorch→JAX training harness
-- [ ] generated-code evaluation
+- [x] text-to-text KD proof
+- [x] automatic paired benchmark builder
+- [x] PyTorch→JAX training harness
+- [x] generated-code evaluation
 - [ ] functional equivalence tests
 
 ## Important limitation
